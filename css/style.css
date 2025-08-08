@@ -123,6 +123,12 @@ img{
     text-decoration: underline #404bbf 4px;
 }
 
+.nav-list li a::after{
+    display: inline-block; /* щоб бордер йшов лише під текстом */
+    border-bottom: 4px solid #404bbf;
+    padding-bottom: 20px; /* відступ від тексту до лінії */
+}
+
 .contacts {
     font-style: normal;
     line-height: 1.5;
@@ -326,6 +332,10 @@ img{
     margin: 12px auto;
 }
 
+.our-team-links-panel:hover{
+    background-color: #404bbf;
+}
+
 /* Our Team - End */
 
 /* Portfolio Section */
@@ -360,11 +370,6 @@ img{
     width: calc( (100% - 48px) / 3);
 }
 
-.portfolio-card img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
 
 /* Inner block for text */
 .portfolio-info {
@@ -391,6 +396,38 @@ img{
     line-height: 1.5;
     letter-spacing: 0.02em;
     margin: 0;
+}
+
+.portfolio-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 90, 229);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 40px 32px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 250ms ease, opacity 250ms ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer */
@@ -458,6 +495,10 @@ img{
 
 .social-icon {
   fill: #f4f4fd;
+}
+
+.social-item:hover{
+    background-color: #31d0aa;
 }
 
 /* Footer - End */
